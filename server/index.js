@@ -49,7 +49,11 @@ app.get('*', (req, res) => {
 const startServer = async () => {
   try {
     await initDB();
-    await seedDatabase();
+    try {
+      await seedDatabase();
+    } catch (seedErr) {
+      console.log('ℹ️ Note on database seeding:', seedErr.message);
+    }
     app.listen(PORT, () => {
       console.log(`🚀 PERN Server is running live on http://localhost:${PORT}`);
     });

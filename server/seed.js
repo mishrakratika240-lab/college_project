@@ -129,8 +129,8 @@ export const seedDatabase = async () => {
 
     if (Array.isArray(sem1Subjects) && sem1Subjects.length > 0) {
       for (let i = 0; i < 15; i++) {
-        const subRes = await query('INSERT INTO feedback_submissions (semester) VALUES (1)');
-        const subId = subRes && subRes[0] ? subRes[0].id : i + 1;
+        const subRes = await query('INSERT INTO feedback_submissions (semester) VALUES (1) RETURNING id');
+        const subId = subRes && subRes[0] && subRes[0].id ? subRes[0].id : (i + 1);
 
         for (const subj of sem1Subjects) {
           for (const crit of criteriaKeys) {
