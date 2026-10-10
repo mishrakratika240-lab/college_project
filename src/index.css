@@ -1,0 +1,289 @@
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #8b5cf6;
+  --accent: #14b8a6;
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Glassmorphic Container */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--bg-card-border);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Rating Grid Table */
+.rating-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rating-table th {
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--accent);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--bg-card-border);
+}
+
+.rating-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.92rem;
+}
+
+.rating-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Radio Chip Selector */
+.rating-options {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.rating-option-label {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--bg-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(15, 23, 42, 0.5);
+  font-size: 0.9rem;
+}
+
+.rating-option-input {
+  display: none;
+}
+
+.rating-option-input:checked + .rating-option-label {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  transform: scale(1.08);
+}
+
+/* Semester Chips */
+.sem-chip {
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  border: 1px solid var(--bg-card-border);
+  background: rgba(30, 41, 59, 0.6);
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sem-chip.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Print Stylesheet for PDF Generation */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-size: 10pt !important;
+  }
+
+  header, footer, nav, .no-print, .btn-primary, .btn-outline, .sem-chip {
+    display: none !important;
+  }
+
+  .glass-card {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .print-header {
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+  }
+
+  .print-header h1 {
+    color: #000000 !important;
+    font-size: 18pt !important;
+  }
+
+  .print-header h3 {
+    color: #000000 !important;
+    font-size: 13pt !important;
+  }
+
+  .rating-table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+    border: 1px solid #000 !important;
+  }
+
+  .rating-table th, .rating-table td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 4px 6px !important;
+    font-size: 9pt !important;
+  }
+
+  .rating-table th {
+    background-color: #f3f4f6 !important;
+    font-weight: bold !important;
+  }
+
+  .print-subject-box {
+    background-color: #f8fafc !important;
+    border: 1px solid #000 !important;
+    color: #000 !important;
+    padding: 6px 10px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .print-subject-box * {
+    color: #000 !important;
+  }
+
+  .mode-badge {
+    background: none !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    border: 1px solid #000 !important;
+    padding: 2px 6px !important;
+  }
+
+  .subject-report-block {
+    page-break-inside: avoid !important;
+    margin-bottom: 20px !important;
+  }
+}
