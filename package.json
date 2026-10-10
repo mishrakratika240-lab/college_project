@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node api.js && vite",
+    "build": "node api.js && vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
     "seed": "node server/seed.js",
-    "start": "node server/index.js"
+    "start": "node api.js && node server/index.js"
   },
   "dependencies": {
     "express": "^4.19.2",
