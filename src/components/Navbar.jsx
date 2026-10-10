@@ -4,7 +4,7 @@ import { GraduationCap, ShieldCheck, UserCheck, LogOut } from 'lucide-react';
 export default function Navbar({ activeView, setActiveView, adminToken, onLogout }) {
   return (
     <header style={{ borderBottom: '1px solid var(--bg-card-border)', background: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(12px)', sticky: 'top', top: 0, zIndex: 100 }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="nav-header-container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
         
         {/* Brand Logo & Title */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -22,7 +22,7 @@ export default function Navbar({ activeView, setActiveView, adminToken, onLogout
         </div>
 
         {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div className="nav-actions-container" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <button 
             className={activeView === 'student' ? 'btn-primary' : 'btn-outline'} 
             onClick={() => setActiveView('student')}

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Lock, User, KeyRound, ArrowRight } from 'lucide-react';
 
 export default function AdminLogin({ onLoginSuccess }) {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -92,10 +92,7 @@ export default function AdminLogin({ onLoginSuccess }) {
           {loading ? 'Authenticating...' : 'Sign In as Admin'} <ArrowRight size={18} />
         </button>
       </form>
-
-      <div style={{ marginTop: '1.5rem', textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-        Default Credentials: Username: <code>admin</code> | Password: <code>admin123</code>
-      </div>
+    </div>
 
     </div>
   );
