@@ -93,7 +93,5 @@ export default function AdminLogin({ onLoginSuccess }) {
         </button>
       </form>
     </div>
-
-    </div>
   );
 }
