@@ -1,13 +1,13 @@
 :root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #8b5cf6;
-  --accent: #14b8a6;
-  --bg-main: #0f172a;
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --bg-card-border: rgba(255, 255, 255, 0.1);
+  --primary: #dc2626;
+  --primary-hover: #b91c1c;
+  --secondary: #991b1b;
+  --accent: #f87171;
+  --bg-main: #070d1d;
+  --bg-card: rgba(15, 23, 42, 0.85);
+  --bg-card-border: rgba(220, 38, 38, 0.2);
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
+  --text-secondary: #cbd5e1;
   --text-muted: #64748b;
   --success: #10b981;
   --danger: #ef4444;
@@ -25,8 +25,9 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-main);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.95) 0px, transparent 50%),
+    radial-gradient(at 50% 30%, rgba(153, 27, 27, 0.15) 0px, transparent 60%);
   background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
@@ -40,7 +41,7 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--bg-card-border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
 .btn-primary {
@@ -60,11 +61,11 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.6);
+  box-shadow: 0 8px 25px -6px rgba(220, 38, 38, 0.7);
 }
 
 .btn-outline {
-  background: transparent;
+  background: rgba(15, 23, 42, 0.6);
   color: var(--text-primary);
   border: 1px solid var(--bg-card-border);
   padding: 0.6rem 1.2rem;
@@ -78,8 +79,9 @@ body {
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(220, 38, 38, 0.15);
   border-color: var(--primary);
+  color: #fff;
 }
 
 .btn-danger {
@@ -101,7 +103,7 @@ body {
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(10, 16, 32, 0.7);
   border: 1px solid var(--bg-card-border);
   border-radius: 10px;
   color: var(--text-primary);
@@ -112,7 +114,7 @@ body {
 
 .form-control:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
 }
 
 /* Rating Grid Table */
@@ -125,7 +127,7 @@ body {
 }
 
 .rating-table th {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(10, 16, 32, 0.95);
   color: var(--accent);
   padding: 0.85rem 1rem;
   text-align: left;
@@ -142,7 +144,7 @@ body {
 }
 
 .rating-table tr:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(220, 38, 38, 0.05);
 }
 
 /* Radio Chip Selector */
@@ -163,7 +165,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(10, 16, 32, 0.6);
   font-size: 0.9rem;
 }
 
@@ -175,7 +177,7 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.5);
   transform: scale(1.08);
 }
 
@@ -184,7 +186,7 @@ body {
   padding: 0.6rem 1.4rem;
   border-radius: 30px;
   border: 1px solid var(--bg-card-border);
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(15, 23, 42, 0.7);
   color: var(--text-secondary);
   font-weight: 600;
   cursor: pointer;
@@ -195,7 +197,7 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border-color: transparent;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5);
 }
 
 /* Print Stylesheet for PDF Generation */
